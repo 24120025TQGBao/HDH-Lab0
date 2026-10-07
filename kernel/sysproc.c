@@ -110,3 +110,18 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+uint64
+sys_trace(void)
+{
+  int mask;
+  argint(0, &mask); //lấy argument thứ 0 của system call, chuyển nó thành số nguyên, rồi ghi vào biến mask.
+  myproc()->trace_mask = mask;
+  return 0;
+}
+
+uint64
+sys_trace_mask(void)
+{
+  return myproc()->trace_mask;
+}
