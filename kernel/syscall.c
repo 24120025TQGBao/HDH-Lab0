@@ -31,7 +31,6 @@ static char *trace_names[] = {
   [SYS_close]     "close",
   [SYS_sync]      "sync",
   [SYS_trace]     "trace",
-  [SYS_trace_mask] "trace_mask",
 };
 
 // Fetch the uint64 at addr from the current process.
@@ -131,7 +130,6 @@ extern uint64 sys_mkdir(void);
 extern uint64 sys_close(void);
 extern uint64 sys_sync(void);
 extern uint64 sys_trace(void);
-extern uint64 sys_trace_mask(void);
 
 // An array mapping syscall numbers from syscall.h
 // to the function that handles the system call.
@@ -160,7 +158,6 @@ static uint64 (*syscalls[])(void) = {
   [SYS_close]   = sys_close,
   [SYS_sync]    = sys_sync,
   [SYS_trace]   = sys_trace,
-  [SYS_trace_mask]  = sys_trace_mask,
   // clang-format on
 };
 

@@ -44,4 +44,3 @@ entry("pause");
 entry("uptime");
 entry("sync");
 entry("trace");
-entry("trace_mask");
