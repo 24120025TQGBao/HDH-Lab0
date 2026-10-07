@@ -275,6 +275,9 @@ kfork(void)
   }
   np->sz = p->sz;
 
+  // Con kế thừa mask trace của cha
+  np->tracemask = p->tracemask;
+
   // copy saved user registers.
   *(np->trapframe) = *(p->trapframe);
 
